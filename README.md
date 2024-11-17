@@ -12,5 +12,4 @@ Where to use : Computer
 - Stella_MD 패키지에서 odom에 대한 토픽만 발행하고, tf는 꺼야됨
 - /odom, /imu 토픽을 "ekf"에서 받은 후에 새로운 /odometry/filtered 토픽과 /tf/odom 를 발행함 
 - /tf/odom을 기준으로 AMCL 실행 후 /tf/map 발행
-
--[Stella_N1_Lattepanda](https://github.com/Gyeongrok-Jang/Stella_N1_Lattepanda)
+- [Stella_N1_Lattepanda](https://github.com/Gyeongrok-Jang/Stella_N1_Lattepanda)
