@@ -38,7 +38,9 @@ def generate_launch_description():
 
     rviz_config_dir = os.path.join(get_package_share_directory('stella_cartographer'),
                                    'rviz', 'stella_cartographer.rviz')
-
+    ekf_param_file = os.path.join(
+        get_package_share_directory("stella_navigation2"), "param", "ekf.yaml"
+    )
     return LaunchDescription([
         DeclareLaunchArgument(
             'cartographer_config_dir',
@@ -85,4 +87,12 @@ def generate_launch_description():
             arguments=['-d', rviz_config_dir],
             parameters=[{'use_sim_time': use_sim_time}],
             output='screen'),
+            
+        Node(
+            package='robot_localization',
+            executable='ekf_node',
+            name='ekf_filter_node',
+            output='screen',
+            parameters=[ekf_param_file],
+        ),
     ])
